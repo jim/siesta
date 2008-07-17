@@ -1,0 +1,1 @@
+class GrandParent < ActiveRecord::Base; end

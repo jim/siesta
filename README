@@ -1,0 +1,24 @@
+Siesta: A little REST for your controllers
+=================
+
+This plugin provides all the standard REST actions to controllers, eliminating a lot of duplicate code. It also encourages the use of some patterns that I have found emerging in my code.
+
+
+Example
+=======
+
+The simplest use case is like so:
+
+  siesta :resources
+
+or if you're no fun:
+
+  restful_methods_for :resources
+
+  
+For more example, check out the specs.
+
+
+
+
+Copyright (c) 2008 Jim Benton, released under the MIT license
