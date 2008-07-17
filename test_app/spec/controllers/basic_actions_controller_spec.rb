@@ -3,11 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe BasicActionsController do
 
   before(:each) do
-    @parents = mock('ParentProxy')
-    @children = mock('ChildProxy')
-    @grand_parent = mock(GrandParent, :parents => @parents)
-    @parent = mock(Parent, :children => @children)
-    @child = mock(Child)
+    @parents = mock('ParentProxy', :proxy_target => true)
+    @children = mock('ChildProxy', :proxy_target => true)
+    @grand_parent = mock_model(GrandParent, :parents => @parents)
+    @parent = mock_model(Parent, :children => @children)
+    @child = mock_model(Child)
   end
 
   it 'should perform finds and render the index partial for an index get' do
@@ -62,12 +62,15 @@ describe BasicActionsController do
   it 'should create and redirect for a create post with valid params' do
     GrandParent.should_receive(:find).with('1').and_return(@grand_parent)
     @parents.should_receive(:find).with('2').and_return(@parent)
-    @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
+    @children.should_receive(:build).and_return(@child)
+    @child.should_receive(:attributes=).with({'title' => 'A Title'})
     @child.should_receive(:save).and_return(true)
+    @child.should_receive(:errors).twice.and_return([])
     
     post 'create', :grand_parent_id => '1', :parent_id => '2', :child => {:title => 'A Title'}
-
-    response.should redirect_to('index')
+    
+    response.should be_redirect
+    response.should redirect_to('http://test.host/grand_parents/1001/parents/1002/children/')
   end
 
   # 

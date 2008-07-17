@@ -2113,3 +2113,947 @@ Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:30:29) [GE
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:32:01) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "child"=>{"title"=>"A Title"}, "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:32:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00088 (1137 reqs/sec) | Rendering: 0.00013 (15%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:32:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00082 (1220 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:32:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001701)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:35:05) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "child"=>{"title"=>"A Title"}, "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:35:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1157 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:35:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00080 (1245 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:35:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001720)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:35:50) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:35:50) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00092 (1081 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:35:50) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00081 (1228 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:35:50) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001776)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:37:16) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:37:16) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00088 (1132 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:37:16) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00083 (1199 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:37:16) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001772)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000214)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:37:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:37:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00091 (1100 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:37:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00083 (1200 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:37:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001750)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 02:38:28) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 02:38:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00089 (1121 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 02:38:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00080 (1253 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 02:38:28) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001838)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 08:53:41) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 08:53:41) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00097 (1032 reqs/sec) | Rendering: 0.00013 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 08:53:41) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00083 (1207 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 08:53:41) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001730)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 08:55:03) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 08:55:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00088 (1135 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 08:55:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00081 (1240 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 08:55:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001733)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 08:55:57) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 08:55:57) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00094 (1069 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 08:55:57) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00080 (1249 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 08:55:57) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001778)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 08:57:05) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 08:57:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00090 (1117 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 08:57:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00080 (1253 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 08:57:05) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001838)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000191)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000197)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 08:58:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 08:58:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00089 (1128 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 08:58:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00098 (1018 reqs/sec) | Rendering: 0.00012 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 08:58:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001838)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:00:21) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:00:21) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1166 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:00:21) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00090 (1116 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:00:21) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001780)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000190)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000201)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:00:45) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:00:45) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00098 (1017 reqs/sec) | Rendering: 0.00015 (15%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:00:45) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00082 (1213 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:00:45) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.002123)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000229)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000204)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:10:35) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:10:35) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00085 (1176 reqs/sec) | Rendering: 0.00013 (15%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:10:35) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00080 (1251 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:10:35) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001708)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000189)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000206)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:11:01) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:11:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00088 (1140 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:11:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00081 (1237 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:11:01) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001774)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000189)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000199)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:12:07) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:12:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1156 reqs/sec) | Rendering: 0.00013 (15%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:12:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00081 (1227 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:12:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001773)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000189)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000199)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000217)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:13:02) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001564)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000144)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://test.host/grand_parents/%23%5BSpec::Mocks::Mock:0xb93e3a%20@name=GrandParent(Table%20doesn't%20exist)%5D/parents/%23%5BSpec::Mocks::Mock:0xb8cfc2%20@name=Parent(Table%20doesn't%20exist)%5D/children/
+Completed in 0.00564 (177 reqs/sec) | DB: 0.00171 (30%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:13:02) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00088 (1141 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:13:02) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00087 (1146 reqs/sec) | Rendering: 0.00011 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:13:02) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.000353)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:13:54) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00341 (293 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:13:54) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00090 (1106 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:13:54) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00086 (1162 reqs/sec) | Rendering: 0.00011 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:13:54) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001797)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:14:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00330 (302 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:14:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1159 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:14:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00083 (1198 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:14:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001738)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:15:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00339 (294 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:15:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00090 (1112 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:15:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00086 (1162 reqs/sec) | Rendering: 0.00011 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:15:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001738)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:15:39) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00329 (303 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:15:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00085 (1176 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:15:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00086 (1165 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:15:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001705)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:16:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00335 (298 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:16:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00113 (888 reqs/sec) | Rendering: 0.00016 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:16:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00108 (929 reqs/sec) | Rendering: 0.00015 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:16:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001869)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:17:29) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00333 (300 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:17:29) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00096 (1036 reqs/sec) | Rendering: 0.00014 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:17:29) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00090 (1112 reqs/sec) | Rendering: 0.00011 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:17:29) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001702)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:21:10) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00342 (292 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:21:10) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1157 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:21:10) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00086 (1161 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:21:10) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001754)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:21:43) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00336 (297 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:21:43) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00087 (1145 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:21:43) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00088 (1136 reqs/sec) | Rendering: 0.00013 (15%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:21:43) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001776)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:22:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00331 (302 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:22:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00086 (1165 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:22:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00084 (1193 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:22:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+  [4;36;1mSQL (0.001743)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:23:39) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00359 (278 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:23:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00087 (1154 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:23:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00085 (1176 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:23:39) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:24:03) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00332 (301 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:24:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00087 (1152 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:24:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00086 (1165 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:24:03) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:24:22) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00337 (296 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:24:22) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00087 (1146 reqs/sec) | Rendering: 0.00013 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:24:22) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00091 (1101 reqs/sec) | Rendering: 0.00013 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:24:22) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/index
+Completed in 0.00148 (675 reqs/sec) | Rendering: 0.00018 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#create (for 0.0.0.0 at 2008-07-17 09:25:08) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"basic_actions", "child"=>{"title"=>"A Title"}, "grand_parent_id"=>"1", "parent_id"=>"2"}
+Redirected to http://test.host/grand_parents/1001/parents/1002/children/
+Completed in 0.00329 (303 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://test.host/basic_actions/create?child%5Btitle%5D=A+Title&grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#edit (for 0.0.0.0 at 2008-07-17 09:25:08) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/edit
+Completed in 0.00087 (1144 reqs/sec) | Rendering: 0.00012 (14%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/edit/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#show (for 0.0.0.0 at 2008-07-17 09:25:08) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/show
+Completed in 0.00087 (1154 reqs/sec) | Rendering: 0.00011 (13%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions/show/3?grand_parent_id=1&parent_id=2]
+
+
+Processing BasicActionsController#index (for 0.0.0.0 at 2008-07-17 09:25:08) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"basic_actions", "grand_parent_id"=>"1", "parent_id"=>"2"}
+Rendering basic_actions/index
+Completed in 0.00157 (637 reqs/sec) | Rendering: 0.00020 (12%) | DB: 0.00000 (0%) | 200 OK [http://test.host/basic_actions?grand_parent_id=1&parent_id=2]
