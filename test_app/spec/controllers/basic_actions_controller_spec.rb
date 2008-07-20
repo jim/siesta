@@ -70,8 +70,7 @@ describe BasicActionsController do
   end
 
   it 'should create and redirect for a create post with valid params' do
-    @children.should_receive(:build).and_return(@child)
-    @child.should_receive(:attributes=).with({'title' => 'A Title'})
+    @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
     @child.should_receive(:save)
     @child.should_receive(:errors).twice.and_return([])
     
@@ -83,8 +82,7 @@ describe BasicActionsController do
 
   
   it 'should failt to create and render the create form for a create post with invalid params' do
-    @children.should_receive(:build).and_return(@child)
-    @child.should_receive(:attributes=).with({'title' => 'A Title'})
+    @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
     @child.should_receive(:save)
     @child.should_receive(:errors).twice.and_return([:body => 'is required'])
     

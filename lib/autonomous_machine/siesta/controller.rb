@@ -99,9 +99,9 @@ module AutonomousMachine
           send_or_default("new_#{siesta_config(:resource)}") do
             source = resource_source(siesta_config(:resource))
             if source.respond_to?(:proxy_target)
-              resource = source.build(resource_params)
+              resource = source.build(resource_params(create_params))
             else
-              resource = source.new(resource_params)
+              resource = source.new(resource_params(create_params))
             end
             instance_variable_set("@#{siesta_config(:resource)}", resource)
           end
@@ -111,7 +111,6 @@ module AutonomousMachine
           send_or_default("create_#{siesta_config(:resource)}") do
             new_resource
             resource = instance_variable_get("@#{siesta_config(:resource)}")
-            resource.attributes=resource_params(create_params)
             resource.save
           end
         end
