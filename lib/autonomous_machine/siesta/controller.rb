@@ -25,28 +25,24 @@ module AutonomousMachine
           raise ConfigurationError.new("Siesta cannot manage 'resource' resources") if self.siesta_config[:resource] == 'resource'
           
           self.siesta_config[:resource_chain] = resources
-        
-          instance_eval do
-            
-            include InstanceMethods
-            # helper_method :edit_resource_path
-            # helper_method :new_resource_path
-            # helper_method :resource_path
-            # helper_method :resources_path
           
+          instance_eval do
+            include InstanceMethods
             before_filter :load_resource_chain
-            
           end
-        
-          if options[:public].respond_to? :each
-            public *options[:public]
-          elsif options[:public].is_a? Symbol
-            if options[:public] == :all
-              public :index, :new, :create, :update, :edit, :destroy, :show
+          
+          if options[:actions].respond_to? :each
+            self.siesta_config[:public_actions] = options[:actions]
+          elsif options[:actions].is_a? Symbol
+            if options[:actions] == :all
+              self.siesta_config[:public_actions]= [:index, :new, :create, :update, :edit, :destroy, :show]
             else
-              public options[:public]
+              self.siesta_config[:public_actions]= [options[:public]]
             end
           end
+          
+          public *self.siesta_config[:public_actions] unless self.siesta_config[:public_actions].nil?
+          
         end
         
         alias :siesta :restful_actions_for
@@ -100,28 +96,38 @@ module AutonomousMachine
         protected
       
         def new_resource
-          source = resource_source(siesta_config(:resource))
-          if source.respond_to?(:proxy_target)
-            resource = source.build(resource_params(siesta_config(:resource)))
-          else
-            resource = source.new(resource_params(siesta_config(:resource)))
+          send_or_default("new_#{siesta_config(:resource)}") do
+            source = resource_source(siesta_config(:resource))
+            if source.respond_to?(:proxy_target)
+              resource = source.build(resource_params)
+            else
+              resource = source.new(resource_params)
+            end
+            instance_variable_set("@#{siesta_config(:resource)}", resource)
           end
         end
       
         def create_resource
           send_or_default("create_#{siesta_config(:resource)}") do
             new_resource
-            resource = instance_variable_get("@#{resource_name}")
-            resource.attributes=resource_params(siesta_config(:resource))
+            resource = instance_variable_get("@#{siesta_config(:resource)}")
+            resource.attributes=resource_params
             resource.save
           end
         end
         
         def update_resource
           send_or_default("update_#{siesta_config(:resource)}") do
-            resource = instance_variable_get("@#{resource_name}")
-            resource.attributes=resource_params(siesta_config(:resource))
+            resource = instance_variable_get("@#{siesta_config(:resource)}")
+            resource.attributes=resource_params
             resource.save
+          end
+        end
+        
+        def destroy_resource
+          send_or_default("destroy_#{siesta_config(:resource)}") do
+            resource = instance_variable_get("@#{siesta_config(:resource)}")
+            resource.destroy
           end
         end
 
@@ -130,7 +136,7 @@ module AutonomousMachine
         end
 
         def load_resources
-          load_collection(siesta_config(:resource).pluralize)
+          load_collection(siesta_config(:resource))
         end
       
         def load_object(name)
@@ -141,10 +147,10 @@ module AutonomousMachine
         end      
       
         def load_collection(name)
-          collection = send_or_default("load_#{siesta_config(:resource).pluralize}") do
-            resource_source(name).paginate(:all, {:page => params[:page]})
+          collection = send_or_default("load_#{name.pluralize}") do
+            resource_source(name).paginate(:page => params[:page])
           end
-          instance_variable_set("@#{resource_name.pluralize}", collection)
+          instance_variable_set("@#{name.pluralize}", collection)
         end
       
         def send_or_default(method, &block)
@@ -165,7 +171,7 @@ module AutonomousMachine
         end
       
         def resource_params(attributes={})
-          (params[siesta_config(:resource)] || {}).reject{|k, v| !allowed_params.include?(k.to_sym) }.merge(attributes)
+          (params[siesta_config(:resource)] || {}).reject{|k, v| !allowed_params.map(&:to_s).include?(k) }.merge(attributes)
         end
       
         def load_resource_chain
@@ -201,15 +207,21 @@ module AutonomousMachine
         end
       
         def resource_created?
-          @resource.errors.empty?
+          send_or_default("#{siesta_config(:resource)}_created?") do
+            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
+          end
         end
-      
+              
         def resource_destroyed?
-          @resource.errors.empty?
+          send_or_default("#{siesta_config(:resource)}_destroyed?") do
+            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
+          end
         end
-      
+              
         def resource_updated?
-          @resource.errors.empty?
+          send_or_default("#{siesta_config(:resource)}_updated?") do
+            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
+          end
         end
       
         def respond_to_html_on_create
@@ -231,7 +243,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_destroy_failure
-          redirect_to :back
+          render :action => 'show'
         end
  
         def respond_to_html_on_destroy_success
@@ -244,7 +256,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_update_failure
-          redirect_to :back
+          render :action => 'edit'
         end
  
         def respond_to_html_on_update_success
@@ -253,43 +265,47 @@ module AutonomousMachine
       
         # URL helpers
       
-        # def new_resource_path(*args)
-        #   args.unshift(resource_parent) if resource_parent_class
-        #   __send__("new_#{resource_route_prefix}#{resource_name}_path", *args)
-        # end
-        #       
-        # def edit_resource_path(*args)
-        #   args.unshift(resource_parent) if resource_parent_class
-        #   __send__("edit_#{resource_route_prefix}#{resource_name}_path", *args)
-        # end
-        #       
-        # def resource_path(*args)
-        #     args.unshift(resource_parent) if resource_parent_class
-        #   __send__("#{resource_route_prefix}#{resource_name}_path", *args)
-        # end
-        # 
-        # def resources_path(*args)
-        #   __send__("#{resource_route_prefix}#{resource_name.pluralize}_path", *args)
-        # end
+        def new_resource_path(*args)
+          send("new_#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+        end
+              
+        def edit_resource_path(*args)
+          send("edit_#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+        end
+              
+        def resource_path(*args)
+          send("#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+        end
+        
+        def resources_path(*args)
+          send("#{resource_route_prefix}#{siesta_config(:resource).pluralize}_path", *(resource_route_arguments.concat(args)))
+        end
       
-        # def resource_route_prefix
-        #   prefixes = []
-        #   prefixes << resource_namespace if resource_namespace
-        #   prefixes << resource_parent_name if resource_parent_class
-        #   prefixes.empty? ? '' : prefixes.join('_') + '_'
-        # end
+        def resource_route_arguments
+          send_or_default("#{siesta_config(:resource)}_route_prefix") do
+            siesta_config(:resource_chain).map do |name|
+              instance_variable_get("@#{name}")
+            end
+          end
+        end
+      
+        def resource_route_prefix
+          send_or_default("#{siesta_config(:resource)}_route_prefix") do
+            siesta_config(:resource_chain).map{|name| "#{name}_"}.join
+          end
+        end
       
         def allowed_params
           []
         end
         
-        # def report(message, level = :notice)
-        #   if request.xhr?
-        #     (flash.now[level] ||= []) << message
-        #   else
-        #     (flash[level] ||= []) << message
-        #   end
-        # end
+        def report(message, level = :notice)
+          if request.xhr?
+            (flash.now[level] ||= []) << message
+          else
+            (flash[level] ||= []) << message
+          end
+        end
 
         def siesta_config(name)
           self.class.siesta_config[name.to_sym]
