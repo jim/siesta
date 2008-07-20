@@ -111,7 +111,7 @@ module AutonomousMachine
           send_or_default("create_#{siesta_config(:resource)}") do
             new_resource
             resource = instance_variable_get("@#{siesta_config(:resource)}")
-            resource.attributes=resource_params
+            resource.attributes=resource_params(create_params)
             resource.save
           end
         end
@@ -119,7 +119,7 @@ module AutonomousMachine
         def update_resource
           send_or_default("update_#{siesta_config(:resource)}") do
             resource = instance_variable_get("@#{siesta_config(:resource)}")
-            resource.attributes=resource_params
+            resource.attributes=resource_params(update_params)
             resource.save
           end
         end
@@ -168,6 +168,14 @@ module AutonomousMachine
               name.classify.constantize
             end
           end
+        end
+      
+        def create_params
+          {}
+        end
+        
+        def update_params
+          {}
         end
       
         def resource_params(attributes={})

@@ -18,7 +18,7 @@ or if you're no fun:
 
   restful_methods_for :resources
   
-For more example, check out the specs. They are located in test_app/specs.
+For more examples, check out the specs. They are located in test_app/specs.
 
 Inspiration
 ===========
