@@ -81,7 +81,7 @@ describe BasicActionsController do
   end
 
   
-  it 'should failt to create and render the create form for a create post with invalid params' do
+  it 'should fail to create and render the create form for a create post with invalid params' do
     @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
     @child.should_receive(:save)
     @child.should_receive(:errors).twice.and_return([:body => 'is required'])
