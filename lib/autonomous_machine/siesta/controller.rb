@@ -49,13 +49,17 @@ module AutonomousMachine
             resourcified_methods.module_eval "protected; def #{prefix}_#{self.siesta_config[:resource]}; #{prefix}_resource; end", __FILE__, __LINE__
           end
           
-          self.siesta_config[:resource_chain].each do |resource|
-            resourcified_methods.module_eval "protected; def load_#{resource}; load_object('#{resource}'); end", __FILE__, __LINE__
+          name = self.siesta_config[:resource]
+          resourcified_methods.module_eval "protected; def load_#{name.pluralize}; load_collection('#{name}'); end", __FILE__, __LINE__
+          resourcified_methods.module_eval "protected; def #{name.pluralize}_params; resource_params; end", __FILE__, __LINE__
+          %w(created updated destroyed).each do |action|
+            resourcified_methods.module_eval "protected; def #{name}_#{action}?; resource_#{action}?('#{name}'); end", __FILE__, __LINE__
           end
           
-          resource = self.siesta_config[:resource]
-          resourcified_methods.module_eval "protected; def load_#{resource}; load_object('#{resource}'); end", __FILE__, __LINE__
-          resourcified_methods.module_eval "protected; def load_#{resource.pluralize}; load_collection('#{resource}'); end", __FILE__, __LINE__
+          (self.siesta_config[:resource_chain] + [self.siesta_config[:resource]]).each do |resource|
+            resourcified_methods.module_eval "protected; def load_#{resource}; load_object('#{resource}'); end", __FILE__, __LINE__
+            resourcified_methods.module_eval "protected; def #{resource}_source; resource_source('#{resource}'); end", __FILE__, __LINE__
+          end
           
           instance_eval do
             include resourcified_methods
@@ -72,14 +76,14 @@ module AutonomousMachine
       
         def create
           send("create_#{siesta_config(:resource)}")
-          report message_for_create_success(@resource) if resource_created?
+          report message_for_create_success(@resource) if send("#{siesta_config(:resource)}_created?")
           respond_to_create
         end
       
         def destroy
           send("load_#{siesta_config(:resource)}")
           send("destroy_#{siesta_config(:resource)}")
-          report message_for_destroy_success(@resource) if resource_destroyed?
+          report message_for_destroy_success(@resource) if send("#{siesta_config(:resource)}_destroyed?")
           respond_to_destroy
         end
       
@@ -106,7 +110,7 @@ module AutonomousMachine
         def update
           send("load_#{siesta_config(:resource)}")
           send("update_#{siesta_config(:resource)}")
-          report message_for_update_success(@resource) if resource_updated?
+          report message_for_update_success(@resource) if send("#{siesta_config(:resource)}_updated?")
           respond_to_update
         end
       
@@ -140,12 +144,12 @@ module AutonomousMachine
         end
       
         def load_object(name)
-          object = resource_source(name).find(resource_id(name))
+          object = send("#{name}_source").find(resource_id(name))
           instance_variable_set("@#{name}", object)
         end      
       
         def load_collection(name)
-          collection = resource_source(name).paginate(:page => params[:page])
+          collection = send("#{name}_source").paginate(:page => params[:page])
           instance_variable_set("@#{name.pluralize}", collection)
         end
       
@@ -188,6 +192,10 @@ module AutonomousMachine
         def message_for_update_success(resource); "Your changes have been saved."; end
         def message_for_destroy_success(resource); "The #{siesta_config(:resource)} has been deleted."; end
       
+        def resource_created?(name); instance_variable_get("@#{name}").errors.empty?; end
+        def resource_destroyed?(name); instance_variable_get("@#{name}").errors.empty?; end
+        def resource_updated?(name); instance_variable_get("@#{name}").errors.empty?; end
+      
         def respond_to_index; respond_to_action('index'); end
         def respond_to_show; respond_to_action('show'); end
         def respond_to_new; respond_to_action('new'); end
@@ -204,22 +212,8 @@ module AutonomousMachine
           end
         end
       
-        def resource_created?
-          send_or_default("#{siesta_config(:resource)}_created?") do
-            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
-          end
-        end
-              
-        def resource_destroyed?
-            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
-        end
-              
-        def resource_updated?
-            instance_variable_get("@#{siesta_config(:resource)}").errors.empty?
-        end
-      
         def respond_to_html_on_create
-          return respond_to_html_on_create_success if resource_created?
+          return respond_to_html_on_create_success if send("#{siesta_config(:resource)}_created?")
           respond_to_html_on_create_failure
         end
  
@@ -232,7 +226,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_destroy
-          return respond_to_html_on_destroy_success if resource_destroyed?
+          return respond_to_html_on_destroy_success if send("#{siesta_config(:resource)}_destroyed?")
           respond_to_html_on_destroy_failure
         end
  
@@ -245,7 +239,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_update
-          return respond_to_html_on_update_success if resource_updated?
+          return respond_to_html_on_update_success if send("#{siesta_config(:resource)}_updated?")
           respond_to_html_on_update_failure
         end
  
