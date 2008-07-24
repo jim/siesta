@@ -117,7 +117,7 @@ module AutonomousMachine
         protected
       
         def new_resource
-          source = resource_source(siesta_config(:resource))
+          source = send("#{siesta_config(:resource)}_source")
           if source.respond_to?(:proxy_target)
             resource = source.build(resource_params(create_params))
           else

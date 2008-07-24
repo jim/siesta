@@ -2,22 +2,11 @@ class OverridingActionsController < ApplicationController
   
   siesta :somethings, :actions => :all
 
-  def new
-    super
-  end
+  def index; super; end
+  def new; super; end
+  def create; super; end
+  def edit; super; end
+  def update; super; end
+  def delete; super; end
   
-  protected
-  
-  def load_something
-    custom_load_something
-  end
-  
-  def create_something
-    custom_create_something
-    super
-  end
-
-  def custom_load_something; end
-  def custom_new_something; end
-  def custom_create_something; end
 end
