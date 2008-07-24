@@ -178,7 +178,7 @@ module AutonomousMachine
       
         def load_resource_chain
           siesta_config(:resource_chain).each do |name|
-            load_object(name)
+            send("load_#{name}")
           end
         end
       
