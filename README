@@ -13,11 +13,11 @@ Example
 
 The simplest use case is like so:
 
-  siesta :resources
+  siesta :pencils, :actions => :all
 
 or if you're no fun:
 
-  restful_actions_for :resources
+  restful_actions_for :pencils, :actions => :all
   
 For more examples, check out the specs. They are located in test_app/specs.
 
