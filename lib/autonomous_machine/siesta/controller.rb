@@ -52,6 +52,9 @@ module AutonomousMachine
           name = self.siesta_config[:resource]
           resourcified_methods.module_eval "protected; def load_#{name.pluralize}; load_collection('#{name}'); end", __FILE__, __LINE__
           resourcified_methods.module_eval "protected; def #{name.pluralize}_params; resource_params; end", __FILE__, __LINE__
+          resourcified_methods.module_eval "protected; def #{name}_order; nil; end", __FILE__, __LINE__
+          resourcified_methods.module_eval "protected; def #{name}_includes; nil; end", __FILE__, __LINE__
+          resourcified_methods.module_eval "protected; def #{name}_conditions; nil; end", __FILE__, __LINE__
           %w(created updated destroyed).each do |action|
             resourcified_methods.module_eval "protected; def #{name}_#{action}?; resource_#{action}?('#{name}'); end", __FILE__, __LINE__
           end
@@ -149,7 +152,7 @@ module AutonomousMachine
         end      
       
         def load_collection(name)
-          collection = send("#{name}_source").paginate(:page => params[:page])
+          collection = send("#{name}_source").paginate(:page => params[:page], :order => send("#{name}_order"), :include => send("#{name}_includes"), :conditions => send("#{name}_conditions"))
           instance_variable_set("@#{name.pluralize}", collection)
         end
       
