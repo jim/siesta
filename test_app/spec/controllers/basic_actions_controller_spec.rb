@@ -18,7 +18,7 @@ describe BasicActionsController do
     
     @paginated_children = mock('PaginatedChildren')
     
-    @children.should_receive(:paginate).with(:page => nil).and_return(@paginated_children)
+    @children.should_receive(:paginate).with(:page => nil, :include => nil, :conditions => nil, :order => nil).and_return(@paginated_children)
     
     get 'index', :grand_parent_id => '1', :parent_id => '2'
     
