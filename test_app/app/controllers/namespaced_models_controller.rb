@@ -1,3 +1,3 @@
 class NamespacedModelsController < ApplicationController
-  siesta 'Creatures::Merfolks', 'Weapons::Tridents'
+  siesta 'Creature::Merfolks', 'Weapon::Tridents'
 end
