@@ -18,7 +18,7 @@ module AutonomousMachine
         
           self.siesta_config = {}
         
-          resources = args.map{|r| r.to_s.singularize}
+          resources = args.map{|r| r.to_s.singularize.underscore}
         
           self.siesta_config[:resource] = resources.pop
           raise ConfigurationError.new("Siesta requires at least one resource") unless self.siesta_config[:resource]
@@ -45,11 +45,12 @@ module AutonomousMachine
           
           resourcified_methods = Module.new
           
+          name = self.siesta_config[:resource].gsub(/([a-z_]+\/)/, '')
+                    
           %w(new create destroy update destroy).each do |prefix|
-            resourcified_methods.module_eval "protected; def #{prefix}_#{self.siesta_config[:resource]}; #{prefix}_resource; end", __FILE__, __LINE__
+            resourcified_methods.module_eval "protected; def #{prefix}_#{name}; #{prefix}_resource; end", __FILE__, __LINE__
           end
-          
-          name = self.siesta_config[:resource]
+
           resourcified_methods.module_eval "protected; def load_#{name.pluralize}; load_collection('#{name}'); end", __FILE__, __LINE__
           resourcified_methods.module_eval "protected; def #{name.pluralize}_params; resource_params; end", __FILE__, __LINE__
           resourcified_methods.module_eval "protected; def #{name}_order; nil; end", __FILE__, __LINE__
@@ -60,8 +61,9 @@ module AutonomousMachine
           end
           
           (self.siesta_config[:resource_chain] + [self.siesta_config[:resource]]).each do |resource|
-            resourcified_methods.module_eval "protected; def load_#{resource}; load_object('#{resource}'); end", __FILE__, __LINE__
-            resourcified_methods.module_eval "protected; def #{resource}_source; resource_source('#{resource}'); end", __FILE__, __LINE__
+            demodulized = resource.gsub(/([a-z_]+\/)/, '')
+            resourcified_methods.module_eval "protected; def load_#{demodulized}; load_object('#{demodulized}'); end", __FILE__, __LINE__
+            resourcified_methods.module_eval "protected; def #{demodulized}_source; resource_source('#{demodulized}'); end", __FILE__, __LINE__
           end
           
           instance_eval do
@@ -181,7 +183,7 @@ module AutonomousMachine
       
         def load_resource_chain
           siesta_config(:resource_chain).each do |name|
-            send("load_#{name}")
+            send("load_#{demodulize(name)}")
           end
         end
       
@@ -298,6 +300,9 @@ module AutonomousMachine
           self.class.siesta_config[name.to_sym]
         end
         
+        def demodulize(namespaced_resource_name)
+          namespaced_resource_name.gsub(/([a-z_]+\/)/, '')
+        end
       end
     end
   end
