@@ -7,6 +7,7 @@ There are several other excellent plugins that provide the same basic functional
 
 I prefer writing my controllers in Ruby, and using language level mechanisms such as redefining a method and calling super as needed. I find this makes it easier to understand what an action is doing, and also allows for the most flexibility.
 
+This is the stable branch, which should always have good spec coverage.
 
 Example
 =======
