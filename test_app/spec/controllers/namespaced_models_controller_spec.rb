@@ -38,110 +38,104 @@ describe NamespacedModelsController do
     response.should render_template('index')
   end
   
-  # it 'should performs finds and render the show partial for a show get' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   
-  #   get 'show', :grand_parent_id => '1', :parent_id => '2', :id => '3'
-  #   
-  #   assigns[:grand_parent].should eql(@grand_parent)
-  #   assigns[:parent].should eql(@parent)
-  #   assigns[:child].should eql(@child)
-  #   
-  #   response.should be_success
-  #   response.should render_template('show')
-  # end
-  # 
-  # it 'should perform finds and render the new partial for a new get' do
-  #   @children.should_receive(:build).with({}).and_return(@child)
-  #   
-  #   get 'new', :grand_parent_id => '1', :parent_id => '2', :id => '3'
-  #   
-  #   assigns[:grand_parent].should eql(@grand_parent)
-  #   assigns[:parent].should eql(@parent)
-  #   assigns[:child].should eql(@child)
-  #   
-  #   response.should be_success
-  #   response.should render_template('new')
-  # end
-  # 
-  # it 'should perform finds and render the edit partial for an edit get' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   
-  #   get 'edit', :grand_parent_id => '1', :parent_id => '2', :id => '3'
-  #   
-  #   assigns[:grand_parent].should eql(@grand_parent)
-  #   assigns[:parent].should eql(@parent)
-  #   assigns[:child].should eql(@child)
-  #   
-  #   response.should be_success
-  #   response.should render_template('edit')
-  # end
-  # 
-  # it 'should create and redirect for a create post with valid params' do
-  #   @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
-  #   @child.should_receive(:save)
-  #   @child.should_receive(:errors).twice.and_return([])
-  #   
-  #   post 'create', :grand_parent_id => '1', :parent_id => '2', :child => {:title => 'A Title'}
-  #   
-  #   response.should be_redirect
-  #   # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
-  # end
-  # 
-  # 
-  # it 'should fail to create and render the create form for a create post with invalid params' do
-  #   @children.should_receive(:build).with({'title' => 'A Title'}).and_return(@child)
-  #   @child.should_receive(:save)
-  #   @child.should_receive(:errors).twice.and_return([:body => 'is required'])
-  #   
-  #   post 'create', :grand_parent_id => '1', :parent_id => '2', :child => {:title => 'A Title'}
-  #   
-  #   response.should render_template('new')
-  # end
-  # 
-  # it 'should update and redirect for a update put with valid params' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   @child.should_receive(:attributes=).with({'title' => 'A Title'})
-  #   @child.should_receive(:save)
-  #   @child.should_receive(:errors).twice.and_return([])
-  #   
-  #   put 'update', :grand_parent_id => '1', :parent_id => '2', :id => '3', :child => {:title => 'A Title'}
-  #   
-  #   response.should be_redirect
-  #   # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
-  # end
-  # 
-  # 
-  # it 'should fail to update and render the edit form for an update post with invalid params' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   @child.should_receive(:attributes=).with({'title' => 'A Title'})
-  #   @child.should_receive(:save)
-  #   @child.should_receive(:errors).twice.and_return([:body => 'is required'])
-  #   
-  #   put 'update', :grand_parent_id => '1', :parent_id => '2', :id => '3', :child => {:title => 'A Title'}
-  #   
-  #   response.should render_template('edit')
-  # end
-  # 
-  # it 'should destroy and redirect for a delete put' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   @child.should_receive(:destroy)
-  #   @child.should_receive(:errors).twice.and_return([])
-  #   
-  #   delete 'destroy', :grand_parent_id => '1', :parent_id => '2', :id => '3'
-  #   
-  #   response.should be_redirect
-  #   # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
-  # end
-  # 
-  # 
-  # it 'should fail to destroy and render the show page for a failed destroy' do
-  #   @children.should_receive(:find).with('3').and_return(@child)
-  #   @child.should_receive(:destroy)
-  #   @child.should_receive(:errors).twice.and_return([:body => 'is required'])
-  #   
-  #   delete 'destroy', :grand_parent_id => '1', :parent_id => '2', :id => '3'
-  #   
-  #   response.should render_template('show')
-  # end
+  it 'should performs finds and render the show partial for a show get' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    
+    get 'show', :merfolk_id => '1', :id => '3'
+    
+    assigns[:merfolk].should eql(@merfolk)
+    assigns[:trident].should eql(@trident)
+    
+    response.should be_success
+    response.should render_template('show')
+  end
+  
+  it 'should perform finds and render the new partial for a new get' do
+    @tridents.should_receive(:build).with({}).and_return(@trident)
+    
+    get 'new', :merfolk_id => '1'
+    
+    assigns[:merfolk].should eql(@merfolk)
+    assigns[:trident].should eql(@trident)
+    
+    response.should be_success
+    response.should render_template('new')
+  end
+  
+  it 'should perform finds and render the edit partial for an edit get' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    
+    get 'edit', :merfolk_id => '1', :id => '3'
+    
+    assigns[:merfolk].should eql(@merfolk)
+    assigns[:trident].should eql(@trident)
+    
+    response.should be_success
+    response.should render_template('edit')
+  end
+  
+  it 'should create and redirect for a create post with valid params' do
+    @tridents.should_receive(:build).with({'title' => 'A Title'}).and_return(@trident)
+    @trident.should_receive(:save)
+    @trident.should_receive(:errors).twice.and_return([])
+    
+    post 'create', :merfolk_id => '1', :trident => {:title => 'A Title'}
+    
+    response.should be_redirect
+    # response.should redirect_to(:controller => 'namespaced_models', :action => 'index')
+  end
+    
+  it 'should fail to create and render the create form for a create post with invalid params' do
+    @tridents.should_receive(:build).with({'title' => 'A Title'}).and_return(@trident)
+    @trident.should_receive(:save)
+    @trident.should_receive(:errors).twice.and_return([:body => 'is required'])
+    
+    post 'create', :merfolk_id => '1', :trident => {:title => 'A Title'}
+    
+    response.should render_template('new')
+  end
+  
+  it 'should update and redirect for a update put with valid params' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    @trident.should_receive(:attributes=).with({'title' => 'A Title'})
+    @trident.should_receive(:save)
+    @trident.should_receive(:errors).twice.and_return([])
+    
+    put 'update', :merfolk_id => '1', :id => '3', :trident => {:title => 'A Title'}
+    
+    response.should be_redirect
+    # response.should redirect_to(:controller => 'namespaced_models', :action => 'index')
+  end
+  
+  it 'should fail to update and render the edit form for an update post with invalid params' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    @trident.should_receive(:attributes=).with({'title' => 'A Title'})
+    @trident.should_receive(:save)
+    @trident.should_receive(:errors).twice.and_return([:body => 'is required'])
+    
+    put 'update', :merfolk_id => '1', :id => '3', :trident => {:title => 'A Title'}
+    
+    response.should render_template('edit')
+  end
+  
+  it 'should destroy and redirect for a delete put' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    @trident.should_receive(:destroy)
+    @trident.should_receive(:errors).twice.and_return([])
+    
+    delete 'destroy', :merfolk_id => '1', :id => '3'
+    
+    response.should be_redirect
+    # response.should redirect_to(:controller => 'namespaced_models', :action => 'index')
+  end
+  
+  it 'should fail to destroy and render the show page for a failed destroy' do
+    @tridents.should_receive(:find).with('3').and_return(@trident)
+    @trident.should_receive(:destroy)
+    @trident.should_receive(:errors).twice.and_return([:body => 'is required'])
+    
+    delete 'destroy', :merfolk_id => '1', :id => '3'
+    
+    response.should render_template('show')
+  end
 end
