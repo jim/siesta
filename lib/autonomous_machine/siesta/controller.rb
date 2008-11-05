@@ -80,71 +80,71 @@ module AutonomousMachine
         private
       
         def create
-          send("create_#{siesta_config(:resource)}")
-          report message_for_create_success(@resource) if send("#{siesta_config(:resource)}_created?")
+          send("create_#{demodulize(siesta_config(:resource))}")
+          report message_for_create_success(@resource) if send("#{demodulize(siesta_config(:resource))}_created?")
           respond_to_create
         end
       
         def destroy
-          send("load_#{siesta_config(:resource)}")
-          send("destroy_#{siesta_config(:resource)}")
-          report message_for_destroy_success(@resource) if send("#{siesta_config(:resource)}_destroyed?")
+          send("load_#{demodulize(siesta_config(:resource))}")
+          send("destroy_#{demodulize(siesta_config(:resource))}")
+          report message_for_destroy_success(@resource) if send("#{demodulize(siesta_config(:resource))}_destroyed?")
           respond_to_destroy
         end
       
         def edit
-          send("load_#{siesta_config(:resource)}")
+          send("load_#{demodulize(siesta_config(:resource))}")
           respond_to_edit
         end
       
         def index
-          send("load_#{siesta_config(:resource).pluralize}")
+          send("load_#{demodulize(siesta_config(:resource)).pluralize}")
           respond_to_index
         end
       
         def new
-          send("new_#{siesta_config(:resource)}")
+          send("new_#{demodulize(siesta_config(:resource))}")
           respond_to_new
         end
       
         def show
-          send("load_#{siesta_config(:resource)}")
+          send("load_#{demodulize(siesta_config(:resource))}")
           respond_to_show
         end
       
         def update
-          send("load_#{siesta_config(:resource)}")
-          send("update_#{siesta_config(:resource)}")
-          report message_for_update_success(@resource) if send("#{siesta_config(:resource)}_updated?")
+          send("load_#{demodulize(siesta_config(:resource))}")
+          send("update_#{demodulize(siesta_config(:resource))}")
+          report message_for_update_success(@resource) if send("#{demodulize(siesta_config(:resource))}_updated?")
           respond_to_update
         end
       
         protected
       
         def new_resource
-          source = send("#{siesta_config(:resource)}_source")
+          source = send("#{demodulize(siesta_config(:resource))}_source")
           if source.respond_to?(:proxy_target)
             resource = source.build(resource_params(create_params))
           else
             resource = source.new(resource_params(create_params))
           end
-          instance_variable_set("@#{siesta_config(:resource)}", resource)
+          instance_variable_set("@#{demodulize(siesta_config(:resource))}", resource)
         end
       
         def create_resource
-          send("new_#{siesta_config(:resource)}")
-          resource = instance_variable_get("@#{siesta_config(:resource)}")
+          send("new_#{demodulize(siesta_config(:resource))}")
+          resource = instance_variable_get("@#{demodulize(siesta_config(:resource))}")
           resource.save
         end
         
         def update_resource
-          resource = instance_variable_get("@#{siesta_config(:resource)}")
+          resource = instance_variable_get("@#{demodulize(siesta_config(:resource))}")
           resource.attributes=resource_params(update_params)
           resource.save
         end
         
         def destroy_resource
-          resource = instance_variable_get("@#{siesta_config(:resource)}")
+          resource = instance_variable_get("@#{demodulize(siesta_config(:resource))}")
           resource.destroy
         end
       
@@ -159,13 +159,22 @@ module AutonomousMachine
         end
       
         def resource_source(name)
-          if name == siesta_config(:resource) && !siesta_config(:resource_chain).empty?
-            instance_variable_get("@#{siesta_config(:resource_chain).last}").send(siesta_config(:resource).pluralize)
-          elsif siesta_config(:resource_chain).include?(name) && siesta_config(:resource_chain).first != name
-            var_name = "@#{siesta_config(:resource_chain)[siesta_config(:resource_chain).index(name)-1]}"
-            instance_variable_get(var_name).send(name.pluralize)
+          if name == demodulize(siesta_config(:resource)) && !siesta_config(:resource_chain).empty?
+            instance_variable_get("@#{demodulize(siesta_config(:resource_chain).last)}").send(demodulize(siesta_config(:resource)).pluralize)
           else
-            name.classify.constantize
+            match = siesta_config(:resource_chain).find do |r|
+              demodulize(r) == name
+            end
+            if match
+              if demodulize(siesta_config(:resource_chain).first) != name
+                var_name = "@#{demodulize(siesta_config(:resource_chain)[siesta_config(:resource_chain).index(match)-1])}"
+                instance_variable_get(var_name).send(name.pluralize)
+              else
+                match.classify.constantize
+              end
+            else
+              name.classify.constantize
+            end
           end
         end
       
@@ -178,7 +187,7 @@ module AutonomousMachine
         end
       
         def resource_params(attributes={})
-          (params[siesta_config(:resource)] || {}).reject{|k, v| !allowed_params.map(&:to_s).include?(k) }.merge(attributes)
+          (params[demodulize(siesta_config(:resource))] || {}).reject{|k, v| !allowed_params.map(&:to_s).include?(k) }.merge(attributes)
         end
       
         def load_resource_chain
@@ -188,7 +197,7 @@ module AutonomousMachine
         end
       
         def resource_id(name)
-          id = name == siesta_config(:resource) ? params[:id] : params[name + '_id']
+          id = name == demodulize(siesta_config(:resource)) ? params[:id] : params[name + '_id']
           raise MissingResourceId.new("No ID found for #{name}") unless id
           id
         end
@@ -218,7 +227,7 @@ module AutonomousMachine
         end
       
         def respond_to_html_on_create
-          return respond_to_html_on_create_success if send("#{siesta_config(:resource)}_created?")
+          return respond_to_html_on_create_success if send("#{demodulize(siesta_config(:resource))}_created?")
           respond_to_html_on_create_failure
         end
  
@@ -231,7 +240,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_destroy
-          return respond_to_html_on_destroy_success if send("#{siesta_config(:resource)}_destroyed?")
+          return respond_to_html_on_destroy_success if send("#{demodulize(siesta_config(:resource))}_destroyed?")
           respond_to_html_on_destroy_failure
         end
  
@@ -244,7 +253,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_update
-          return respond_to_html_on_update_success if send("#{siesta_config(:resource)}_updated?")
+          return respond_to_html_on_update_success if send("#{demodulize(siesta_config(:resource))}_updated?")
           respond_to_html_on_update_failure
         end
  
@@ -259,29 +268,29 @@ module AutonomousMachine
         # URL helpers
       
         def new_resource_path(*args)
-          send("new_#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+          send("new_#{resource_route_prefix}#{demodulize(siesta_config(:resource))}_path", *(resource_route_arguments.concat(args)))
         end
               
         def edit_resource_path(*args)
-          send("edit_#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+          send("edit_#{resource_route_prefix}#{demodulize(siesta_config(:resource))}_path", *(resource_route_arguments.concat(args)))
         end
               
         def resource_path(*args)
-          send("#{resource_route_prefix}#{siesta_config(:resource)}_path", *(resource_route_arguments.concat(args)))
+          send("#{resource_route_prefix}#{demodulize(siesta_config(:resource))}_path", *(resource_route_arguments.concat(args)))
         end
         
         def resources_path(*args)
-          send("#{resource_route_prefix}#{siesta_config(:resource).pluralize}_path", *(resource_route_arguments.concat(args)))
+          send("#{resource_route_prefix}#{demodulize(siesta_config(:resource)).pluralize}_path", *(resource_route_arguments.concat(args)))
         end
       
         def resource_route_arguments
           siesta_config(:resource_chain).map do |name|
-            instance_variable_get("@#{name}")
+            instance_variable_get("@#{demodulize(name)}")
           end
         end
       
         def resource_route_prefix
-          siesta_config(:resource_chain).map{|name| "#{name}_"}.join
+          siesta_config(:resource_chain).map{|name| "#{demodulize(name)}_"}.join
         end
       
         def allowed_params

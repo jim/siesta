@@ -1,3 +1,9 @@
 class NamespacedModelsController < ApplicationController
-  siesta 'Creatures::Merfolks', 'Weapons::Tridents'
+  siesta 'Creature::Merfolks', 'Weapon::Tridents', :actions => :all
+  
+  protected
+  
+  def allowed_params
+    [:title]
+  end
 end
