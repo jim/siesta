@@ -18,7 +18,7 @@ module AutonomousMachine
         
           self.siesta_config = {}
         
-          resources = args.map{|r| r.to_s.singularize}
+          resources = args.map{|r| r.to_s.demodulize.singularize.downcase}
         
           self.siesta_config[:resource] = resources.pop
           raise ConfigurationError.new("Siesta requires at least one resource") unless self.siesta_config[:resource]
