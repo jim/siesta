@@ -236,7 +236,7 @@ module AutonomousMachine
         end
       
         def respond_to_html_on_create_success
-          redirect_to resource_path(@resource)
+          redirect_to resource_path(instance_variable_get("@#{demodulize(siesta_config(:resource))}"))
         end
  
         def respond_to_html_on_destroy
@@ -262,7 +262,7 @@ module AutonomousMachine
         end
  
         def respond_to_html_on_update_success
-          redirect_to resource_path(@resource)
+          redirect_to resource_path(instance_variable_get("@#{demodulize(siesta_config(:resource))}"))
         end
       
         # URL helpers
