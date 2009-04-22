@@ -16,6 +16,7 @@ Example
 The simplest use case is like so:
 
   siesta :pencils, :actions => :all
+  siesta Dinner::Napkin, Fancy::Spoon, :actions => all
 
 or if you're no fun:
 

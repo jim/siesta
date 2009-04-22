@@ -14,7 +14,7 @@ describe OverridingActionsController do
     controller.should_receive(:message_for_create_success)
     controller.should_receive(:something_created?).and_return(true)
     controller.should_receive(:respond_to_create)
-    post 'create', :id => '123'
+    get 'create', :id => '123'
   end
   
   it "should call default actions using super from within update" do

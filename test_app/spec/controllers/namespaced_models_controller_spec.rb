@@ -5,6 +5,7 @@ describe NamespacedModelsController do
   before(:each) do
     @tridents = mock('TridentProxy', :proxy_target => true)
     @merfolk = mock_model(Creature::Merfolk, :tridents => @tridents)
+    @trident = mock_model(Weapon::Trident)
     
     Creature::Merfolk.stub!(:find).with('1').and_return(@merfolk)
   end

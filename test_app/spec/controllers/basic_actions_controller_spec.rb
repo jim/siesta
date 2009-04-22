@@ -76,8 +76,8 @@ describe BasicActionsController do
     
     post 'create', :grand_parent_id => '1', :parent_id => '2', :child => {:title => 'A Title'}
     
-    response.should be_redirect
-    # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
+    response.should redirect_to(grand_parent_parent_child_path(@grand_parent, @parent, @child))
+
   end
 
   
@@ -99,8 +99,7 @@ describe BasicActionsController do
     
     put 'update', :grand_parent_id => '1', :parent_id => '2', :id => '3', :child => {:title => 'A Title'}
     
-    response.should be_redirect
-    # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
+    response.should redirect_to(grand_parent_parent_child_path(@grand_parent, @parent, @child))
   end
 
   
@@ -122,8 +121,7 @@ describe BasicActionsController do
     
     delete 'destroy', :grand_parent_id => '1', :parent_id => '2', :id => '3'
     
-    response.should be_redirect
-    # response.should redirect_to(:controller => 'basic_actions', :action => 'index')
+    response.should redirect_to(grand_parent_parent_children_path(@grand_parent, @parent))
   end
 
   
