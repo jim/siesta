@@ -9,16 +9,16 @@ describe ParamsHandlingController do
     @something = mock_model(Something, :save => true, :errors => [])
   end
   
-  it "should only pass allowed_params and merge in create_params when creating" do 
+  it "should merge in create_params when creating" do 
     Something.should_receive(:new).with({'title' => 'title', 'creator' => @user}).and_return(@something)
-    post :create, :something => {:title => 'title', :invalid => 'invalid'}
+    post :create, :something => {:title => 'title'}
   end
   
-  it "should only pass allowed_params and merge in update_params when updating" do 
+  it "should merge in update_params when updating" do 
     Something.should_receive(:find).with('123').and_return(@something)
     @something.should_receive(:attributes=).with({'title' => 'title', 'updater' => @user})
     
-    put :update, :id => '123', :something => {:title => 'title', :invalid => 'invalid'}
+    put :update, :id => '123', :something => {:title => 'title'}
   end
 
 end

@@ -14,10 +14,6 @@ class ParamsHandlingController < ApplicationController
     {:updater => @user}    
   end
   
-  def allowed_params
-    [:title, :body]
-  end
-  
   def load_user
     @user = User.find(1)
   end

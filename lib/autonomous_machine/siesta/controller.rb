@@ -187,7 +187,7 @@ module AutonomousMachine
         end
       
         def resource_params(attributes={})
-          (params[demodulize(siesta_config(:resource))] || {}).reject{|k, v| !allowed_params.map(&:to_s).include?(k) }.merge(attributes)
+          (params[demodulize(siesta_config(:resource))] || {}).merge(attributes)
         end
       
         def load_resource_chain
@@ -291,10 +291,6 @@ module AutonomousMachine
       
         def resource_route_prefix
           siesta_config(:resource_chain).map{|name| "#{demodulize(name)}_"}.join
-        end
-      
-        def allowed_params
-          []
         end
         
         def report(message, level = :notice)
