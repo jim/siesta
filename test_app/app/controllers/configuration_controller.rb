@@ -1,5 +1,2 @@
-class ConfigurationController < ApplicationController
-  
-  restful_actions_for :grand_parents, :parents, :children, :actions => [:index, :show, :create]
-  
+class ConfigurationController < Siesta::Controller(:grand_parents, :parents, :children)
 end

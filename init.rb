@@ -1,1 +1,1 @@
-require 'autonomous_machine/siesta'
+require 'siesta'

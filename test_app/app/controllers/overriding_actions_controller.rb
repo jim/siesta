@@ -1,6 +1,4 @@
-class OverridingActionsController < ApplicationController
-  
-  siesta :somethings, :actions => :all
+class OverridingActionsController < Siesta::Controller(:somethings)
 
   def index; super; end
   def new; super; end

@@ -44,6 +44,6 @@ Rails::Initializer.run do |config|
   
   config.after_initialize do
     # load siesta plugin
-    require File.join(File.dirname(__FILE__), '../../lib/autonomous_machine/siesta')
+    require File.join(File.dirname(__FILE__), '../../lib/siesta')
   end
 end

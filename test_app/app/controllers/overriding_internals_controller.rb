@@ -1,6 +1,4 @@
-class OverridingInternalsController < ApplicationController
-  
-  siesta :somethings, :actions => :all
+class OverridingInternalsController < Siesta::Controller(:somethings)
 
   protected
 

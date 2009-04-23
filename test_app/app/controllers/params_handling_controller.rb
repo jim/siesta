@@ -1,8 +1,6 @@
-class ParamsHandlingController < ApplicationController
+class ParamsHandlingController < Siesta::Controller(:somethings)
   
   before_filter :load_user
-  
-  siesta :somethings, :actions => [:create, :update]
   
   protected
   

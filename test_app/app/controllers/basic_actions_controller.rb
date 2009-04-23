@@ -1,5 +1,3 @@
-class BasicActionsController < ApplicationController
-  
-  siesta :grand_parents, :parents, :children, :actions => :all
+class BasicActionsController < Siesta::Controller(:grand_parents, :parents, :children)
   
 end

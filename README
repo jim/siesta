@@ -7,7 +7,7 @@ There are several other excellent plugins that provide the same basic functional
 
 I prefer writing my controllers in Ruby, and using language level mechanisms such as redefining a method and calling super as needed. I find this makes it easier to understand what an action is doing, and also allows for the most flexibility.
 
-This is the stable branch, which should always have good spec coverage. To run the specs, run rake spec from inside test_app.
+This is the stable branch, which should always have good spec coverage. To run the specs, run rake spec from inside test_app. New in this version (0.3) is a new syntax that uses a modified subclassing in place of the old declarative syntax. This change was made to allow Siesta controllers to be easily sub-classed themselves.
 
 
 Example
@@ -15,12 +15,15 @@ Example
 
 The simplest use case is like so:
 
-  siesta :pencils, :actions => :all
-  siesta Dinner::Napkin, Fancy::Spoon, :actions => all
-
-or if you're no fun:
-
-  restful_actions_for :pencils, :actions => :all
+  class PencilsController < Siesta::Controller(:pencils)
+  
+  end
+  
+Namespaced models are supported, and nested resources work as you'd expect:
+  
+  class SpoonsController < Siesta::Controller(Dinner::Napkin, Fancy::Spoon)
+  
+  end
   
 For more examples, check out the specs. They are located in test_app/specs.
 
@@ -28,7 +31,7 @@ For more examples, check out the specs. They are located in test_app/specs.
 Inspiration
 ===========
 
-Siesta was influenced fairly heavily by Brendan Baldwin's rest_easy (http://github.com/brendan/rest_easy). Siesta was created partially as a personal exercise to force myself to really think about how the ultimate REST controller plugin would behave, at least from my point of view.
+Siesta was originally influenced by Brendan Baldwin's rest_easy (http://github.com/brendan/rest_easy). Siesta was created partially as a personal exercise to force myself to really think about how the ultimate REST controller library would behave, at least from my point of view.
 
 
 Copyright (c) 2009 Jim Benton, released under the MIT license

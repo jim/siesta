@@ -1,3 +1,2 @@
-class NamespacedModelsController < ApplicationController
-  siesta 'Creature::Merfolk', 'Weapon::Trident', :actions => :all
+class NamespacedModelsController < Siesta::Controller('Creature::Merfolk', 'Weapon::Trident')
 end
