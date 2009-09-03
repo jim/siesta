@@ -33,7 +33,7 @@ module Siesta
       end
 
       controller.module_eval "protected; def load_#{name.pluralize}; load_collection('#{name}'); end", __FILE__, __LINE__
-      controller.module_eval "protected; def #{name.pluralize}_params; resource_params; end", __FILE__, __LINE__
+      controller.module_eval "protected; def #{name}_params(attributes={}); resource_params(attributes); end", __FILE__, __LINE__
       controller.module_eval "protected; def #{name}_order; nil; end", __FILE__, __LINE__
       controller.module_eval "protected; def #{name}_includes; nil; end", __FILE__, __LINE__
       controller.module_eval "protected; def #{name}_conditions; nil; end", __FILE__, __LINE__
@@ -96,11 +96,12 @@ module Siesta
       protected
     
       def new_resource
-        source = send("#{demodulize(siesta_config(:resource))}_source")
+        name = demodulize(siesta_config(:resource))
+        source = send("#{name}_source")
         if source.respond_to?(:proxy_target)
-          resource = source.build(resource_params(create_params))
+          resource = source.build(send("#{name}_params", create_params))
         else
-          resource = source.new(resource_params(create_params))
+          resource = source.new(send("#{name}_params", create_params))
         end
         instance_variable_set("@#{demodulize(siesta_config(:resource))}", resource)
       end
@@ -112,8 +113,9 @@ module Siesta
       end
       
       def update_resource
-        resource = instance_variable_get("@#{demodulize(siesta_config(:resource))}")
-        resource.attributes=resource_params(update_params)
+        name = demodulize(siesta_config(:resource))
+        resource = instance_variable_get("@#{name}")
+        resource.attributes = send("#{name}_params", update_params)
         resource.save
       end
       
