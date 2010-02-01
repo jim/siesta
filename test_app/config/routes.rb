@@ -7,10 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :somethings
-  
-  map.resources :merfolks do |merfolks|
-    merfolks.resources :tridents
-  end
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
